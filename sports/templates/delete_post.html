@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Delete Blog Post{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports | Blogs</title>
+</head>
+
+<body>
+    {% if user.is_authenticated %}
+        {% if user.id == post.author.id %}
+            <h1>Delete Post...</h1>
+            <br><br>
+            <h3>Delete : {{ post.title }}</h3>
+            <br>
+            <div class="form-group">
+                <form action="" method="POST">
+                {% csrf_token %}
+                <strong>Are You Sure?!</strong> <br><br>
+                <button class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        {% else %}
+            You are not allowed!
+        {% endif %}
+    {% else %}
+        You are not allowed!
+    {% endif %}
+</body>
+
+</html>
+{% endblock %}

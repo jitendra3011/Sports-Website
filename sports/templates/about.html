@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+        <title>About Us</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+              }
+              
+              html {
+                box-sizing: border-box;
+              }
+              
+              *, *:before, *:after {
+                box-sizing: inherit;
+              }
+              
+              .column {
+                float: left;
+                width: 33.3%;
+                margin-bottom: 16px;
+                padding: 0 8px;
+              }
+              
+              .card {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                margin: 8px;
+              }
+              
+              .about-section {
+                padding: 100px;
+                text-align: center;
+                background-color: black;
+                color: ghostwhite;
+              }
+              
+              .container {
+                padding: 0 16px;
+              }
+              
+              .container::after, .row::after {
+                content: "";
+                clear: both;
+                display: table;
+              }
+              
+              .title {
+                color: grey;
+              }
+              
+              .button {
+                border: none;
+                outline: 0;
+                display: inline-block;
+                padding: 8px;
+                color: white;
+                background-color: #950740;
+                text-align: center;
+                cursor: pointer;
+                width: 100%;
+              }
+              
+              .button:hover {
+                background-color: black;
+                width: 100%;
+              }
+              
+              @media screen and (max-width: 650px) {
+                .column {
+                  width: 100%;
+                  display: block;
+                }
+              }
+        </style>
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="menu">
+          <div class="logo">
+            <a href="/">SportSomatic</a>
+          </div>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="about-section">
+        <h1>About Us Page</h1>
+        <p>In practical terms ‘sport’ is defined by its social interpretation as well as its strong association with physical exertion and performance measures. What we perceive as ‘sport’ in one instance may not be in another; sport takes on many forms and is constantly changing based upon societal norms, trends, and new directions...</p>
+
+    </div>
+
+    <h2 style="text-align:center">Our Team</h2>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="" alt="Nikhilesh" style="width:100%">
+                <div class="container">
+                    <h2>Nikhilesh Shivtare</h2>
+                    <p class="title">Student</p>
+                    <p>Fergusson College(Autonomous) Pune.</p>
+                    <p></p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="" alt="Rohit" style="width:100%">
+                <div class="container">
+                    <h2>Rohit Luniya</h2>
+                    <p class="title">Student</p>
+                    <p>Fergusson College(Autonomous) Pune.</p>
+                    <p></p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="" alt="Sunit" style="width:100%">
+                <div class="container">
+                    <h2>Peshwe Sunit</h2>
+                    <p class="title">Student</p>
+                    <p>Fergusson College(Autonomous) Pune.</p>
+                    <p>sunitpeshwe00@gmail.com</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="{% url 'contact' %}"><p><button class="button">Contact</button></p></a>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Edit Blog Post{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports | Blogs</title>
+</head>
+
+<body>
+    {% if user.is_authenticated %}
+        {% if user.id == post.author.id %}
+            <h1>Update Post...</h1>
+            <br><br>
+            <div class="form-group">
+                <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                <button class="btn btn-secondary">Update</button>
+                </form>
+            </div>
+        {% else %}
+            You are not allowed!
+        {% endif %}
+    {% else %}
+        You are not allowed!
+    {% endif %}
+</body>
+
+</html>
+{% endblock %}

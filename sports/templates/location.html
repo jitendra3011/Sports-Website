@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports | Location</title>
+</head>
+<body>
+    <div class="col-10">
+        <nav class="site-navigation text-right" role="navigation">
+            <div class="container">
+                <div class="d-inline-block d-lg-none  ml-md-0 mr-auto py-3"><a href="#"
+                        class="site-menu-toggle js-menu-toggle"><span
+                            class="icon-menu h3"></span></a></div>
+                <ul class="site-menu js-clone-nav d-none d-lg-block">
+                    <li class="active">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="has-children">
+                        <a href="https://onefootball.com/en/home">Sport Types</a>
+                        <ul class="dropdown arrow-top">
+                            <li><a href="https://onefootball.com/en/home">Soccer</a></li>
+                            <li><a href="https://bwfbadminton.com/">Batminton</a></li>
+                            <li><a href="https://www.sportingnews.com/in/nba?gr=www">Basketball</a></li>
+                            <li class="has-children">
+                                <a href="https://goo.gl/maps/NS9VNbrFn9xMHLeq6">Pune Locations</a>
+                                <ul class="dropdown">
+                                    <li><a href="https://goo.gl/maps/J7FoYmVg5mTRAjB29">Kothrud</a></li>
+                                    <li><a href="https://goo.gl/maps/WsSn8ixK8GiGUNzH8">Warje</a></li>
+                                    <li><a href="https://goo.gl/maps/1xo34RnHrwRvgAXG6">Nigdi</a></li>
+                                    <li><a href="https://goo.gl/maps/qnSJg6Jq4XSXGdvz7">Pimpri-Chinchwad</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'event' %}">Events</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+
+                    <li>
+                        {% if user.is_authenticated %}
+                    <h4 style="color: chocolate;"><li>Hello, {{user.first_name}}</li></h4>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    </li>
+
+                    <li>
+                        {% else %}
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'register' %}">Register</a></li>
+                        {% endif %}
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <h4>Here we will provide you locations of sports academis</h4>
+
+
+</body>
+</html>
